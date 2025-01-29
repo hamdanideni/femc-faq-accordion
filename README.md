@@ -15,8 +15,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://github.com/hamdanideni/femc-faq-accordion)
-- Live Site URL: [Add live site URL here](https://hamdanideni.github.io/femc-faq-accordion/)
+- Solution URL: [solution URL](https://github.com/hamdanideni/femc-faq-accordion)
+- Live Site URL: [live site URL](https://hamdanideni.github.io/femc-faq-accordion/)
 
 ## My process
 
