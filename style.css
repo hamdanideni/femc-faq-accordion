@@ -1,0 +1,224 @@
+/* .attribution {
+  font-size: 11px;
+  text-align: center;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+} */
+
+/*  */
+:root {
+  --ff-primary: "Work Sans", serif;
+
+  --clr-white: hsl(0, 0%, 100%);
+  --clr-light-pink: hsl(275, 100%, 97%);
+  --clr-grayish-purple: hsl(292, 16%, 49%);
+  --clr-dark-purple: hsl(292, 42%, 14%);
+  --clr-light-purple: hsl(282, 77%, 53%);
+
+  --fw-reguler-400: 400;
+  --fw-semibold-600: 600;
+  --fw-bold-700: 700;
+}
+
+/* 1. Use a more-intuitive box-sizing model */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* 2. Remove default margin */
+* {
+  margin: 0;
+}
+
+body {
+  /* 3. Add accessible line-height */
+  line-height: 1.5;
+  /* 4. Improve text rendering */
+  -webkit-font-smoothing: antialiased;
+}
+
+/* 5. Improve media defaults */
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+/* 6. Inherit fonts for form controls */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* 7. Avoid text overflows */
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+/* 8. Improve line wrapping */
+p {
+  text-wrap: pretty;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  text-wrap: balance;
+}
+
+h1,
+h2,
+h3 {
+  line-height: 1.2;
+}
+
+/*  */
+
+body {
+  background-color: var(--clr-light-pink);
+  background-image: url("assets/images/background-pattern-mobile.svg");
+  background-position: top;
+  background-repeat: no-repeat;
+  background-size: contain;
+
+  min-height: 100vh;
+
+  font-family: var(--ff-primary);
+  font-size: 1rem;
+  color: var(--clr-grayish-purple);
+  font-weight: var(--fw-reguler-400);
+}
+
+.accordion {
+  padding: 1.5rem;
+  margin: 1.5rem;
+  background-color: var(--clr-white);
+  border-radius: 0.5rem;
+  max-width: 600px;
+
+  position: absolute;
+  top: 15%;
+
+  box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.accordion__heading {
+  display: flex;
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+  align-items: center;
+}
+
+.accordion__heading-title {
+  font-size: 2rem;
+  color: var(--clr-dark-purple);
+}
+
+.icon-star {
+  width: 1.5rem;
+}
+
+.accordion__panel:not(:last-child) {
+  border-bottom: 2px solid rgba(140, 105, 145, 0.05);
+  margin-bottom: 1.5rem;
+}
+
+.accordion__panel-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  margin-bottom: 1.5rem;
+  cursor: pointer;
+}
+
+.accordion__title:hover {
+  color: var(--clr-light-purple);
+}
+
+.accordion__title {
+  flex-basis: 95%;
+
+  font-size: 1rem;
+  color: var(--clr-dark-purple);
+  font-weight: var(--fw-semibold-600);
+}
+
+.minus-icon {
+  opacity: 0;
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: opacity 0.3s;
+}
+
+.accordion__panel.active .plus-icon {
+  opacity: 0;
+}
+
+.accordion__panel.active .minus-icon {
+  opacity: 1;
+}
+
+.accordion__panel-body {
+  font-size: 0.875rem;
+  height: 0;
+  overflow: hidden;
+  transition: height 0.5s;
+}
+
+.accordion__panel.active .accordion__panel-body {
+  height: 150px;
+}
+
+@media (min-width: 768px) {
+  body {
+    background-image: url("assets/images/background-pattern-desktop.svg");
+  }
+
+  .accordion {
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    padding: 1.5rem 3rem;
+    border-radius: 1rem;
+  }
+
+  .accordion__panel.active .accordion__panel-body {
+    height: 120px;
+  }
+
+  .accordion__heading-title {
+    font-size: 4rem;
+  }
+
+  .icon-star {
+    width: 40px;
+    height: 41px;
+  }
+
+  .accordion__panel-body {
+    font-size: 1rem;
+  }
+
+  .accordion__title {
+    font-size: 1.1rem;
+  }
+}
